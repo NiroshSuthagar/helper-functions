@@ -42,7 +42,7 @@ def helper_findOutliers(featureDF,targetDF):
     cleanedFeatures = featureDF.drop(index=uniqueOutlierIndices)
 
     # Left joining to add the classes back to the normalised and cleaned dataset. 
-    master = cleanedFeatures.join(target)
+    master = cleanedFeatures.join(targetDF)
 
     return master
 
@@ -72,7 +72,7 @@ def vifChecker(df, target):
 
     print(vif_data)
 
-def helper_classificationEval(y_test, y_pred, average=None)
+def helper_classificationEval(y_test, y_pred, average=None):
     '''
     This function takes in y_test, y_pred and returns:
     accuracy
